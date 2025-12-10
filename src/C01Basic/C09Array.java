@@ -62,6 +62,10 @@ public class C09Array {
         for (int i=0; i<arr.length; i++){
             newArr[arr.length-1-i]=arr[i];
         }
-
+        int index = 0;
+        for (int i=arr.length-1; i>=0; i--){
+            newArr[index] = arr[i];
+            index++;
+        }
     }
 }
