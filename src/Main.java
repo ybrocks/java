@@ -3,29 +3,47 @@
 //import java.io.IOException;
 //import java.io.InputStreamReader;
 //import java.util.*;
+//import java.util.logging.XMLFormatter;
+//import static com.sun.tools.javac.main.Option.X;
 //
 //public class Main {
-//    public static void main(String[] args) throws IOException{
+//    public static void main(String[] args) throws IOException {
 //        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//
 //        int N = Integer.parseInt(br.readLine());
-//        Map<String, Integer> map = new HashMap<>();
 //
-//        //title별 value입력
-//        for (int i=0; i<N; i++){
-//            String title = br.readLine();
-//            map.put(title, map.getOrDefault(title, 0)+1);
-//        }
-//        //최대value찾기
-//        int max = Integer.MIN_VALUE;
-//        String maxkey = "";
-//        for (String title : map.keySet()){
-//            int value = map.get(title);
-//            if (max < value){
-//                max = value;
-//                maxkey = title;
+//        PriorityQueue<Integer> pq = new PriorityQueue<>();
+//        StringBuilder sb = new StringBuilder();
+//
+//        for (int i = 0; i < N; i++) {
+//            int X = Integer.parseInt(br.readLine());
+//
+//            if (X == 0) {
+//                if (pq.isEmpty()) sb.append(0).append('\n');
+//                else sb.append(pq.poll()).append('\n');
+//            } else {
+//                pq.add(X);
 //            }
 //        }
-//        System.out.println(maxkey);
+//        System.out.println(sb.toString());
+
+
+//        class Solution {
+//            public int solution(int[] scoville, int K) {
+//                PriorityQueue<Long> pq = new PriorityQueue<>();
+//                for (int X : scoville) pq.add((long) X);
+//
+//                int count = 0;
+//
+//                while (!pq.isEmpty() && pq.peek() < K) {
+//                    if (pq.size() < 2) return -1;
+//
+//                    long a = pq.poll();
+//                    long b = pq.poll();
+//                    long mixed = a + (b * 2);
+//
+//                    pq.add(mixed);
+//                    count++;
+//                }
+//                return count;
+//            }
 //        }
-//    }

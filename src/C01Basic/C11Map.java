@@ -114,17 +114,41 @@ public class C11Map {
 //        System.out.println(maxkey);
 
         //TreeMap : key를 정렬(오름차순)하여 map저장
-        Map<String, Integer> myMap = new TreeMap<>();
+//        Map<String, Integer> myMap = new TreeMap<>();
 //        Map<String, Integer> myMap = new TreeMap<>(Comparator.reverseOrder()); //내림차순
-        myMap.put("hello5", 1);
-        myMap.put("hello4", 2);
-        myMap.put("hello3", 3);
-        myMap.put("hello2", 4);
-        myMap.put("hello1", 5);
-        System.out.println(myMap);
+//        myMap.put("hello5", 1);
+//        myMap.put("hello4", 2);
+//        myMap.put("hello3", 3);
+//        myMap.put("hello2", 4);
+//        myMap.put("hello1", 5);
+//        System.out.println(myMap);
 
         // treemap문제 : 백준-파일정리
 
+        // LinkedHashMap : 데이터의 삽입 순서 보장(입력시간순정렬)
+//        Map<String, Integer> myMap = new LinkedHashMap<>();
+//        myMap.put("hello5", 1);
+//        myMap.put("hello4", 2);
+//        myMap.put("hello3", 3);
+//        myMap.put("hello2", 4);
+//        myMap.put("hello1", 5);
+//        for (String a : myMap.keySet()){
+//            System.out.println(a + " " + myMap.get(a));
+//        }
+
+        // Iterator를 활용한 출력
+//        Map<String, Integer> myMap = new HashMap<>();
+//        myMap.put("야구", 2);
+//        myMap.put("축구", 3);
+//        myMap.put("농구", 2);
+//        Iterator<String> iters = myMap.keySet().iterator();
+        // next메서드는 데이터를 하나씩 소모시키면서 값을 반환
+//        System.out.println(iters.next());
+        // hasNext메서드는 iterator안에 그 다음값이 있는지 없는지 boolean리턴
+//        System.out.println(iters.hasNext());
+//        while (iters.hasNext()){
+//            System.out.println(iters.next());
+//        }
 
 
     }
