@@ -107,14 +107,14 @@ public class C13QueueStackDeque {
         //프로그래머스 올바른 괄호, 같은 숫자는 싫어
 
         //Deque : addFirst, addLast, pollFirst, pollLast, peekFirst, peekLast
-        Deque<Integer> myDeque = new ArrayDeque<>();
-        myDeque.addLast(10);
-        myDeque.addLast(20);
-        myDeque.addFirst(30); // 30,10,20
-        System.out.println(myDeque.pollLast()); //20
-        System.out.println(myDeque.pollFirst()); //30
-        System.out.println(myDeque.pollLast()); //10
-        System.out.println(myDeque); // []
+//        Deque<Integer> myDeque = new ArrayDeque<>();
+//        myDeque.addLast(10);
+//        myDeque.addLast(20);
+//        myDeque.addFirst(30); // 30,10,20
+//        System.out.println(myDeque.pollLast()); //20
+//        System.out.println(myDeque.pollFirst()); //30
+//        System.out.println(myDeque.pollLast()); //10
+//        System.out.println(myDeque); // []
 
         // Queue
         // 1)LinkedList - 선입선출 자료구조
