@@ -3,7 +3,7 @@ package C02MethodClass;
 import java.util.ArrayList;
 import java.util.List;
 
-public class C13RecursiveCombiPermuPractice {
+public class C13RecursiveCombiPermuPractice2 {
     public static void main(String[] args) {
 
         List<Integer> myList = new ArrayList<>();

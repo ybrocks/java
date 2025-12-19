@@ -1,0 +1,6 @@
+package C04Interface.BankProgram;
+
+
+//엔티티계층으로서 객체에 대한 상대값을 관리
+public class BankAccount {
+}
