@@ -9,37 +9,18 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
 
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        int N = Integer.parseInt(st.nextToken());
-        int M = Integer.parseInt(st.nextToken());
-
-        List<Integer> myList = new ArrayList<>();
-        for (int i=1; i<=N; i++){
-            myList.add(i);
-        }
-
-        permu(N, M, new boolean[N], myList, new ArrayList<>());
-
-        System.out.println(sb);
-
-    }
-    public static void permu(int N, int M, boolean[] visited, List<Integer> myList, List<Integer> temp){
-        if (temp.size()==M){
-            for (int i=0; i<temp.size(); i++){
-                sb.append(temp.get(i)).append(' ');
+        //절댓값 기준 우선순위 큐(힙)
+        Queue<Integer> pq = new PriorityQueue<>(new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                if (Math.abs(o1) - Math.abs(o2) == 0) {
+                    return o1 - o2;
+                } else {
+                    return Math.abs(o1) - Math.abs(o2);
+                }
             }
-            sb.append('\n');
-            return;
-        }
-        for (int i=0; i<N; i++){
-            if (visited[i]) continue;
-            visited[i] = true;
-
-            temp.add(myList.get(i));
-            permu(N, M, visited, myList, temp);
-            temp.remove(temp.size()-1);
-            visited[i] = false;
-        }
+        });
     }
 }
