@@ -3,6 +3,7 @@ package C07ExceptionFileParsing.Practice1;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 public class MemberRepository {
 
@@ -17,22 +18,26 @@ public class MemberRepository {
         this.memberList.add(member);
     }
     //이메일 조회(회원가입-중복, 로그인-맞는지)
-    public Member findByEmail(String email){
+    public Optional<Member> findByEmail(String email){
+        Member member = null;
         for (Member m : memberList){
             if (m.getEmail().equals(email)){
-                return m;
+                member = m;
+                break;
             }
         }
-        return null;
+        return Optional.ofNullable(member);
     }
     //id로 회원조회(회원상세조회)
-    public Member findById(long id){
+    public Optional<Member> findById(long id){
+        Member member = null;
         for (Member m : memberList){
             if (m.getId()==id){
-                return m;
+                member = m;
+                break;
             }
         }
-        return null;
+        return Optional.ofNullable(member);
     }
     //회원전체조회(회원목록조회)
     public List<Member> findAll(){

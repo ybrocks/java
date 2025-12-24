@@ -15,8 +15,13 @@ public class C02ExceptionAdvance {
         String email = sc.nextLine();
         System.out.println("비밀번호를 입력해주세요");
         String password = sc.nextLine();
-        register(email, password);
-        System.out.println("DB에 저장되는 코드"); //가정
+        try {
+            register(email, password);
+        }catch (IllegalArgumentException e){
+            System.out.println("회원가입 실패");
+            System.out.println(e.getMessage());
+            return;
+        }
 
         //checked Exception의 처리방법
 
@@ -53,18 +58,21 @@ public class C02ExceptionAdvance {
             try {
                 text = Files.readString(filePath);
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                throw new RuntimeException(e);//데이터베이스 롤백
             }
             return text;
     }
 
     static boolean register(String email, String password){
+        boolean check = false;
         if (password.length()>=10){
-            return true;
+            check =true;
         }else {
             //예외를 강제 발생시킴으로서 이 시점에서 해당 메서드 강제 종료
             //예외는 기본적으로 메서드를 호출한 쪽으로 전파
             throw new IllegalArgumentException("비빌먼호가 너무 짧습니다.");
         }
+        System.out.println("DB에 저장되는 코드"); //가정
+        return check;
     }
 }
